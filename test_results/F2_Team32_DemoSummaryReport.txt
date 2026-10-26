@@ -1,0 +1,43 @@
+============================================================
+NETWORK TRAFFIC MONITORING - SUMMARY REPORT
+============================================================
+Generated:        2026-10-27 00:09:10
+Data source:      SIMULATED (demo mode)
+
+--- Overview ---
+Total packets:    1093
+Total bytes:      484852 (473.5 KB)
+Avg packet size:  443.6 bytes
+Capture window:   59.9 s
+Capture rate:     18.3 pkt/s, 7.9 KB/s
+Unique src IPs:   20
+Unique dst IPs:   18
+(Note: capture rate is what this tool observed, not link bandwidth.)
+
+--- Protocol distribution ---
+  HTTP              390 pkts   35.7%  125.9 KB
+  HTTPS/TLS         360 pkts   32.9%  307.2 KB
+  DNS               204 pkts   18.7%  24.1 KB
+  TCP                84 pkts    7.7%  12.0 KB
+  UDP                30 pkts    2.7%  2.5 KB
+  ICMP               25 pkts    2.3%  1.8 KB
+
+--- Top source IPs ---
+  203.0.113.9             250 pkts 19.8 KB
+  192.168.1.9              61 pkts 31.1 KB
+  192.168.1.4              60 pkts 34.5 KB
+  192.168.1.3              58 pkts 26.5 KB
+  192.168.1.11             50 pkts 25.7 KB
+
+--- Anomaly alerts (8) ---
+  [HIGH  ] High packet rate: 203.0.113.9 sent 250 packets in a 10s window (threshold 100).
+  [HIGH  ] Possible port scan: 45.33.12.7 contacted 40 distinct ports on 192.168.1.5 (threshold 15).
+  [MEDIUM] Traffic spike: 54 packets in one second vs mean 17.9 (x3.0 threshold).
+  [MEDIUM] Traffic spike: 171 packets in one second vs mean 17.9 (x3.0 threshold).
+  [MEDIUM] Traffic spike: 108 packets in one second vs mean 17.9 (x3.0 threshold).
+  [LOW   ] Unusually large packet: Packet of 4593 bytes exceeds threshold 3000.
+  [LOW   ] Unusually large packet: Packet of 4241 bytes exceeds threshold 3000.
+  [LOW   ] Unusually large packet: Packet of 4621 bytes exceeds threshold 3000.
+
+============================================================
+Educational tool. Alerts are heuristic, not proof of attack.

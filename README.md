@@ -1,5 +1,23 @@
 # Network Traffic Monitoring and Analysis Tool
 
+**BCSE308P Computer Networks Lab — Innovative Evaluation Practices (Fall 2026-27)**
+**Slot:** F2 · **Team:** 32 · **Member:** Sanchit Kumar (23BCE0043)
+
+### Submission files
+
+| File / folder | Contents |
+|---------------|----------|
+| [`F2_Team32_Report.pdf`](F2_Team32_Report.pdf) | Project report (VTOP Assignment 8) — editable source: `F2_Team32_Report.docx` |
+| [`F2_Team32_PPT.pptx`](F2_Team32_PPT.pptx) | Project presentation (VTOP Assignment 9) |
+| `*.py`, `requirements.txt`, `pytest.ini` | Complete source code and configuration |
+| [`tests/`](tests) | Pytest unit-test suite |
+| [`test_results/`](test_results) | Test run output, demo summary report and generated alerts |
+| [`screenshots/`](screenshots) | Dashboard screenshots (also zipped as `F2_Team32_Screenshots.zip`) |
+| `F2_Team32_SourceCode.zip` | Snapshot archive of the source code |
+
+> No Cisco Packet Tracer (`.pkt`) file is included: this is a software
+> (Python dashboard) project, not a simulated-topology project.
+
 A Python application that captures, analyzes, and visualizes network traffic
 through an interactive Streamlit dashboard. It demonstrates core computer
 networking concepts — the TCP/IP stack, protocol identification, addressing,
@@ -158,7 +176,8 @@ Requires **Python 3.11 or newer**. Check with `python3 --version`.
 
 ### 1. Get the project
 ```bash
-cd "network-traffic-monitor"   # the project directory
+git clone https://github.com/Sanchitkumar18/computer-networks.git
+cd computer-networks
 ```
 
 ### 2. Create and activate a virtual environment
@@ -255,6 +274,12 @@ live network or admin rights.
 37 passed in 0.84s
 ```
 
+The full verbose run is saved in
+[`test_results/F2_Team32_TestResults.txt`](test_results/F2_Team32_TestResults.txt).
+The same folder holds a demo-mode summary report and the alerts CSV it
+produced (1,093 packets → 8 alerts: 1 high packet rate, 1 port scan,
+3 traffic spikes, 3 large packets — matching the injected anomalies).
+
 Coverage includes: TCP/UDP/ICMP/DNS/ARP/IPv6 parsing, malformed/missing-field
 packets, protocol classification, counters and rate math, top-talker/port
 aggregation, all five anomaly rules (above and below threshold), IP/port/size/
@@ -264,15 +289,28 @@ time filtering, empty datasets, CSV export, and demo-data generation.
 
 ## Screenshots
 
-To capture screenshots for your report:
-1. Run the app and click **▶ Demo**.
-2. Visit each page (Overview, Protocol Analysis, IP Analytics, Anomaly Alerts,
-   Packet Explorer).
-3. Use your OS screenshot tool (macOS: `Cmd+Shift+4`; Windows: `Win+Shift+S`).
-4. Save images under a `docs/` or `screenshots/` folder and reference them here.
+All screenshots were taken in Demo Mode (simulated traffic).
 
-Suggested shots: Overview metrics + pie chart, Protocol bar charts, IP
-Analytics top-talkers, Anomaly Alerts table with the injected port scan.
+**Overview** — packet/byte totals, capture rate, protocol mix and traffic over time
+![Overview](screenshots/F2_Team32_01_Overview.jpg)
+
+**Protocol Analysis** — packets and bytes per protocol, packet-size distribution
+![Protocol Analysis](screenshots/F2_Team32_02_Protocol_Analysis.jpg)
+
+**IP Analytics** — top source and destination IPs
+![IP Analytics](screenshots/F2_Team32_03_IP_Analytics.jpg)
+
+**Anomaly Alerts** — injected flood, port scan, traffic spikes and large packets detected
+![Anomaly Alerts](screenshots/F2_Team32_04_Anomaly_Alerts.jpg)
+
+**Packet Explorer** — per-packet table with live filters
+![Packet Explorer](screenshots/F2_Team32_05_Packet_Explorer.jpg)
+
+**Reports & Export** — CSV / summary-report downloads and report preview
+![Reports & Export](screenshots/F2_Team32_06_Reports_Export.jpg)
+
+**Settings** — capture options and configurable anomaly thresholds
+![Settings](screenshots/F2_Team32_07_Settings.jpg)
 
 ---
 

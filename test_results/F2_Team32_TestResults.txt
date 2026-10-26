@@ -1,0 +1,52 @@
+F2_Team32 - Network Traffic Monitoring and Analysis Tool
+Unit test results (pytest -v)
+Run on: 2026-10-27 00:09 | Python 3.11.9 | Darwin 25.6.0
+========================================================================
+============================= test session starts ==============================
+platform darwin -- Python 3.11.9, pytest-9.1.1, pluggy-1.6.0 -- /Users/sanchitkumar/computer networks/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/sanchitkumar/computer networks
+configfile: pytest.ini
+testpaths: tests
+plugins: anyio-4.15.1
+collecting ... collected 37 items
+
+tests/test_anomaly_detector.py::test_empty_is_safe PASSED                [  2%]
+tests/test_anomaly_detector.py::test_high_packet_rate_fires PASSED       [  5%]
+tests/test_anomaly_detector.py::test_high_packet_rate_below_threshold_silent PASSED [  8%]
+tests/test_anomaly_detector.py::test_port_scan_fires PASSED              [ 10%]
+tests/test_anomaly_detector.py::test_large_packet_fires PASSED           [ 13%]
+tests/test_anomaly_detector.py::test_connection_resets_fire PASSED       [ 16%]
+tests/test_anomaly_detector.py::test_detect_all_sorts_by_severity PASSED [ 18%]
+tests/test_anomaly_detector.py::test_alerts_to_dataframe_schema PASSED   [ 21%]
+tests/test_filters.py::test_empty_filter_returns_all PASSED              [ 24%]
+tests/test_filters.py::test_filter_by_src_ip PASSED                      [ 27%]
+tests/test_filters.py::test_filter_by_protocol PASSED                    [ 29%]
+tests/test_filters.py::test_filter_by_port PASSED                        [ 32%]
+tests/test_filters.py::test_filter_by_size_range PASSED                  [ 35%]
+tests/test_filters.py::test_filter_by_time_range PASSED                  [ 37%]
+tests/test_filters.py::test_filter_on_empty_df PASSED                    [ 40%]
+tests/test_filters.py::test_packets_to_csv PASSED                        [ 43%]
+tests/test_filters.py::test_packets_to_csv_empty PASSED                  [ 45%]
+tests/test_filters.py::test_demo_data_generation_reproducible PASSED     [ 48%]
+tests/test_filters.py::test_demo_data_triggers_anomalies PASSED          [ 51%]
+tests/test_filters.py::test_demo_data_no_anomalies_flag PASSED           [ 54%]
+tests/test_packet_parser.py::test_decode_tcp_flags PASSED                [ 56%]
+tests/test_packet_parser.py::test_parse_tcp_https PASSED                 [ 59%]
+tests/test_packet_parser.py::test_parse_udp_dns_query PASSED             [ 62%]
+tests/test_packet_parser.py::test_parse_icmp PASSED                      [ 64%]
+tests/test_packet_parser.py::test_parse_arp PASSED                       [ 67%]
+tests/test_packet_parser.py::test_parse_ipv6_tcp PASSED                  [ 70%]
+tests/test_packet_parser.py::test_parse_http_port80 PASSED               [ 72%]
+tests/test_packet_parser.py::test_parse_malformed_does_not_crash PASSED  [ 75%]
+tests/test_packet_parser.py::test_parse_missing_fields_are_none PASSED   [ 78%]
+tests/test_packet_parser.py::test_as_dict_stable_schema PASSED           [ 81%]
+tests/test_traffic_analyzer.py::test_empty_dataframe_is_safe PASSED      [ 83%]
+tests/test_traffic_analyzer.py::test_summarize_counts_and_rates PASSED   [ 86%]
+tests/test_traffic_analyzer.py::test_protocol_distribution_percentages PASSED [ 89%]
+tests/test_traffic_analyzer.py::test_top_talkers_and_ports PASSED        [ 91%]
+tests/test_traffic_analyzer.py::test_top_conversations PASSED            [ 94%]
+tests/test_traffic_analyzer.py::test_traffic_over_time_buckets PASSED    [ 97%]
+tests/test_traffic_analyzer.py::test_packet_size_distribution PASSED     [100%]
+
+============================== 37 passed in 0.97s ==============================

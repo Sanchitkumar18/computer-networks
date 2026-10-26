@@ -271,7 +271,7 @@ live network or admin rights.
 
 **Actual result on this machine (Python 3.11.9, macOS):**
 ```
-37 passed in 0.84s
+38 passed in 1.89s
 ```
 
 The full verbose run is saved in
@@ -282,7 +282,7 @@ produced (1,093 packets → 8 alerts: 1 high packet rate, 1 port scan,
 
 Coverage includes: TCP/UDP/ICMP/DNS/ARP/IPv6 parsing, malformed/missing-field
 packets, protocol classification, counters and rate math, top-talker/port
-aggregation, all five anomaly rules (above and below threshold), IP/port/size/
+aggregation, all five anomaly rules (above and below threshold), PCAP loading, IP/port/size/
 time filtering, empty datasets, CSV export, and demo-data generation.
 
 ---
@@ -504,7 +504,7 @@ privileges needed to read a file.
 
 **25. How is the project tested without a live network?**
 pytest builds synthetic Scapy packets in memory (IP/TCP/UDP/ICMP/DNS/ARP) and
-asserts on parsed fields, stats, filters, and anomaly rules — 37 tests, all
+asserts on parsed fields, stats, filters, and anomaly rules — 38 tests, all
 passing.
 
 **26. How do you determine traffic direction?**

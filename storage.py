@@ -102,6 +102,9 @@ def load_pcap(path: str | Path, limit: int | None = None) -> list[PacketRecord]:
 
     Validates the path and tolerates malformed packets. Requires Scapy.
     """
+    # Register the protocol layers (Ether -> IP -> TCP/UDP/DNS ...) before
+    # reading; without this rdpcap dissects every frame as Raw bytes.
+    import scapy.layers.all  # noqa: F401
     from scapy.utils import rdpcap
 
     p = Path(path)

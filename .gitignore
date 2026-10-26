@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+*.egg-info/
+.pytest_cache/
+
+# App data (keep the directories, ignore contents)
+data/*
+!data/.gitkeep
+captures/*
+!captures/.gitkeep
+*.db
+*.pcap
+*.pcapng
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/

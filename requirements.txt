@@ -1,0 +1,8 @@
+# Network Traffic Monitoring and Analysis Tool - dependencies
+# Pinned to known-good ranges tested on Python 3.11
+
+scapy>=2.5.0,<3.0.0        # Packet capture and parsing
+streamlit>=1.30.0          # Interactive web dashboard
+pandas>=2.0.0              # Data processing and analysis
+plotly>=5.18.0             # Interactive charts
+pytest>=7.4.0             # Testing framework
